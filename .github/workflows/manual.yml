@@ -1,0 +1,11 @@
+name: Manual Workflow Run
+
+on:
+  workflow_dispatch: # Enables the manual "Run workflow" button
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a script
+        run: echo "Hello, triggered manually by ${{ github.actor }}!"
