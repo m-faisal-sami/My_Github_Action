@@ -1,8 +1,12 @@
 name: Hello World
 on: [push]
 
+env:
+  APP_ENV: staging
 jobs:
-  greet:
+  show:
     runs-on: ubuntu-latest
+    env:
+      LEVEL: job
     steps:
-      - run: echo "Hello from GitHub Actions!"
+      - run: echo "$APP_ENV $LEVEL"
